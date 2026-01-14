@@ -34,5 +34,5 @@ async def on_message(message):
 #f string escreva normal e coloque chave onde precisar
 #pode usar o site discord.py para ver um atributo que funciona
 
-client.run('MTQ0MzcwOTkwNTE4NTAxMzgyMA.GpD0Wo.IM_xaE90mch99m3hbU7IdckpkFyh3RPr7PCkn8')
+client.run('TOKEN')
 import random

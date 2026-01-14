@@ -20,4 +20,4 @@ async def lixo(ctx):
         await ctx.send(file=image)
 
 # RODAR BOT
-bot.run('MTQ0MzcwOTkwNTE4NTAxMzgyMA.GpD0Wo.IM_xaE90mch99m3hbU7IdckpkFyh3RPr7PCkn8')
+bot.run('TOKEN')

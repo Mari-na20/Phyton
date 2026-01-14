@@ -22,4 +22,4 @@ async def heh(ctx, count_heh = 5):
 async def senha(ctx):
     await ctx.send(gen_pass(5))
 
-bot.run('MTQ0MzcwOTkwNTE4NTAxMzgyMA.GpD0Wo.IM_xaE90mch99m3hbU7IdckpkFyh3RPr7PCkn8')
+bot.run('TOKEN')
