@@ -1,11 +1,17 @@
 body {
     font-family: Arial,  sans-serif; /* Font family */
     font-size: 11px; /* O tamanho da fonte principal<p></p> tag  */
-    background-color: #5988FF; /* A cor do plano de fundo da página */
-    color: #000000; /* A cor do texto */ 
+    background-color: #ffffff; /* A cor do plano de fundo da página */
+    color: #ff7300; /* A cor do texto */ 
+}
+@keyframes color-change {
+  0%   { color: rgb(255, 191, 0); }
+  50%  { color: rgb(255, 162, 0); }
+  100% { color: rgb(244, 55, 55); }
 }
 h1 {
     color: #ff6161; /* A cor do cabeçalho */
     font-size: 24px; /* A cor da fonte do cabeçalho */
     font-family: Georgia, serif; /* A font usada no cabeçalho*/
+    animation: color-change 3s infinite;
 }
