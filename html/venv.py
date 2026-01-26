@@ -14,4 +14,17 @@ def hello_world():
 def bye_world():
     return f'<p>{random.choice(facts_list)}</p>'
 
+@app.route('/image')
+def image_world():
+    return '<img src = "https://tse1.mm.bing.net/th/id/OIP.Pf7QR3jLcqlZF0DjAKWUQQHaE7?rs=1&pid=ImgDetMain&o=7&rm=3" width="300" height="250" alt="Descrição da imagem" >'
+
+@app.route('/things')
+def out_world():
+    return ''' <h1> Pokemons!!! <h1> 
+    <p> Esse e o Pikachu: <p>
+    <img src="https://th.bing.com/th/id/R.42ccd03330ac246a64c64bf83c92e85c?rik=0M6mOCiPFioR8w&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f03%2fPokemon-pikachu-hd-wallpaper-background.jpg&ehk=57em4wEyX828IbSz8M6zk945VMOybDtXV209W5Z6RwU%3d&risl=&pid=ImgRaw&r=0" width="300" height="250" alt="Descrição da imagem">
+
+    '''
+
+
 app.run(debug=True)
