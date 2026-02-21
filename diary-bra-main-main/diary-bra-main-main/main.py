@@ -13,10 +13,14 @@ db = SQLAlchemy(app)
 
 # Tarefa #1. Criar uma tabela no Banco de Dados
 
+class Card(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    title = db.Column(db.String(100), nullable=False)
+    subtitle = db.Column(db.String(300), nullable=False)
+    text = db.Column(db.Text, nullable=False)
 
-
-
-
+    def __repr__(self):
+        return f"ID: {self.id}"
 
 
 
@@ -28,10 +32,10 @@ db = SQLAlchemy(app)
 def index():
     # Exibindo os objetos do Banco de Dados
     # Tarefa #2. Exibir os objetos do Banco de Dados no index.html
-    
+    cards = Card.query.order_by(Card.id).all()
 
     return render_template('index.html',
-                           #cards = cards
+                           cards = cards
 
                            )
 
@@ -40,7 +44,7 @@ def index():
 def card(id):
     # Tarefa #2. Exibir o cartão correto pelo seu id
     
-
+    card=Card.query.get(id)
     return render_template('card.html', card=card)
 
 # Executando a página e criando o cartão
@@ -57,10 +61,10 @@ def form_create():
         text =  request.form['text']
 
         # Tarefa #2. Criar uma forma de armazenar dados no Banco de Dados
-        
+        carta = Card(title = title, subtitle=subtitle, text=text)
 
-
-
+        db.session.add(carta)
+        db.session.commit()
 
         return redirect('/')
     else:
