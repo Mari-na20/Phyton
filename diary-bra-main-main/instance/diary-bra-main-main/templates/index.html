@@ -30,8 +30,12 @@
           <div class="card__text">
             <h2 class="card__title">{{el.title}}</h2>
             <p class="card__subtitle">{{el.subtitle}}</p>
+
           </div>
         </a>
+        <div class="card__actions">
+          <a href="/edit/{{ el.id }}">Editar</a>
+        </div>
       </li>
       {% endfor %}
       <li class="card card--creat">
@@ -45,5 +49,4 @@
   </footer>
 </body>
 </html>
-
 

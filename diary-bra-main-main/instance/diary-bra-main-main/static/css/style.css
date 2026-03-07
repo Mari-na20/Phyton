@@ -2,13 +2,13 @@
 body::-webkit-scrollbar {
     width: 12px;
   }
-  
+
   body::-webkit-scrollbar-track {
-    background: #ff8686;        /* a cor da zona de rastreamento */
+    background: rgb(157, 145, 145);        /* a cor da zona de rastreamento */
   }
-  
+
   body::-webkit-scrollbar-thumb {
-    background-color: rgb(255, 132, 132);    /* a cor da barra de rolagem */
+    background-color:rgb(157, 145, 145);    /* a cor da barra de rolagem */
     border-radius: 20px;       /* a forma arredondada da barra de rolagem */
     border: none;
   }
@@ -22,7 +22,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 20px;
-    background-color: #fe8484;
+    background-color:rgb(157, 145, 145);
     color: #ffffff;
 }
 
@@ -81,11 +81,13 @@ ul {
 .card {
     width: 350px;
     height: 500px;
-    transition: 0.2s;
-    background: rgb(255, 111, 111);
+    background: rgb(157, 145, 145);
     border-radius: 20px;
-    box-shadow: 0px 4px 10px rgb(255, 140, 140);
+    box-shadow: 2px 4px 10px rgb(255, 255, 255);
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card__link {
@@ -97,7 +99,7 @@ ul {
 }
 
 .card__text {
-    border-top: 1px solid rgb(233, 14, 14);
+    border-top: 1px solid rgb(255, 255, 255);
     width: inherit;
     display: flex;
     padding: 50px 0 20px;
@@ -122,8 +124,8 @@ ul {
 
 .creat__link {
     display: block;
-    width: inherit;
     height: inherit;
+    width: inherit;
     background: url(../img/plus.svg) no-repeat;
     background-size: 200px 200px;
     background-position: center;
@@ -131,7 +133,7 @@ ul {
 
 .card--creat:hover,
 .card:hover {
-    box-shadow: 0px 4px 10px rgb(233, 14, 14);
+    box-shadow: 0px 4px 10px rgb(255, 255, 255);
 }
 
 .creat-form {
@@ -150,9 +152,9 @@ ul {
     gap: 30px;
     flex-direction: column;
     align-items: center;
-    background: rgb(255, 106, 106);
+    background: rgb(157, 145, 145);
     border-radius: 20px;
-    box-shadow: 0px 4px 10px rgb(254, 118, 118);
+    box-shadow: 0px 4px 10px rgb(157, 145, 145);
 }
 
 .form__inputs {
@@ -193,10 +195,10 @@ ul {
 }
 
 .form__button {
-    border: 1px solid rgb(255, 0, 0);
-    background: #ff5e5e;
+    border: 1px solid rgb(255, 255, 255);
+    background: rgb(157, 145, 145);
     border-radius: 10px;
-    color: rgb(233, 14, 14);
+    color: rgb(255, 255, 255);
     padding: 10px;
     font: inherit;
     width: 200px;
@@ -207,7 +209,7 @@ ul {
 
 .form__button:hover {
     color: #F8FAFC;
-    background:  rgb(233, 14, 14);
+    background:  rgb(255, 255, 255);
 }
 
 .main {
@@ -215,9 +217,9 @@ ul {
 }
 
 .main__block {
-    background: rgb(254, 130, 130);
+    background: rgb(157, 145, 145);
     border-radius: 20px;
-    box-shadow: 0px 4px 10px rgb(255, 135, 135);
+    box-shadow: 0px 4px 10px rgb(157, 145, 145);
     padding: 30px 80px;
     display: flex;
     flex-direction: column;
@@ -238,10 +240,10 @@ ul {
 
 .main__link {
     display: block;
-    border: 1px solid rgb(233, 14, 14);
-    background: #ff6161;
+    border: 1px solid rgb(255, 255, 255);
+    background: rgb(157, 145, 145);
     border-radius: 10px;
-    color: rgb(233, 14, 14);
+    color: rgb(255, 255, 255);
     padding: 15px 10px;
     font: inherit;
     width: 200px;
@@ -252,7 +254,7 @@ ul {
 
 .main__link:hover {
     color: #F8FAFC;
-    background:  rgb(255, 11, 11);
+    background:  rgb(254, 254, 254);
 }
 
 
@@ -269,9 +271,9 @@ ul {
     gap: 30px;
     flex-direction: column;
     align-items: center;
-    background: rgb(255, 92, 92);
+    background: rgb(157, 145, 145);
     border-radius: 20px;
-    box-shadow: 0px 4px 10px rgb(255, 103, 103);
+    box-shadow: 2px 4px 10px rgb(255, 255, 255);
 }
 
 
@@ -292,6 +294,91 @@ ul {
 }
 
 .login__link:hover {
-    color: rgb(233, 14, 14);
+    color: rgb(255, 255, 255);
 
+}
+.card__actions {
+    margin-top: 12px;
+}
+
+.edit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: #111;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.edit-btn:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+/* Centralizar página */
+.page-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+/* Card de edição */
+.edit-card {
+    width: 500px;
+    background: #9b8f8f;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Título */
+.edit-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* Form */
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Inputs */
+.edit-form input,
+.edit-form textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Textarea */
+.edit-form textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+/* Botão */
+.edit-form button {
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.edit-form button:hover {
+    transform: scale(1.05);
 }

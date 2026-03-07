@@ -144,6 +144,42 @@ def logout():
     return redirect('/')
 
 # -------------------------
+# EDITAR CARD (ABRIR PÁGINA)
+# -------------------------
+@app.route('/edit/<int:id>')
+def edit(id):
+
+    if 'user_email' not in session:
+        return redirect('/')
+
+    card = Card.query.get_or_404(id)
+
+    # 🔒 garante que só o dono pode editar
+    if card.user_email != session['user_email']:
+        return "Você não tem permissão para editar este card!"
+
+    return render_template('edit_card.html', card=card)
+
+@app.route('/update/<int:id>', methods=['POST'])
+def update(id):
+
+    if 'user_email' not in session:
+        return redirect('/')
+
+    card = Card.query.get_or_404(id)
+
+    if card.user_email != session['user_email']:
+        return "Você não tem permissão para editar este card!"
+
+    card.title = request.form['title']
+    card.subtitle = request.form['subtitle']
+    card.text = request.form['text']
+
+    db.session.commit()
+
+    return redirect('/index')
+
+# -------------------------
 # INICIAR APP
 # -------------------------
 if __name__ == "__main__":
