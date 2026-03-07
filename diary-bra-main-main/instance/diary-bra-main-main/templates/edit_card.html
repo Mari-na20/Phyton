@@ -1,49 +1,66 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Editar anotação</title>
+  <meta charset="UTF-8">
+  <title>Editar Anotação</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
 
+<header class="header">
+  <img src="{{ url_for('static', filename='img/logo.svg') }}" width="30">
+
+  <ul class="main-list">
+    <li>
+      <img src="{{ url_for('static', filename='img/login.svg') }}" width="20">
+    </li>
+  </ul>
+</header>
+
+<main>
+
+<h1 class="main__title">Editar Anotação</h1>
+
 <div class="page-center">
 
-    <div class="edit-card">
+<div class="edit-card">
 
-        <h1 class="edit-title">Editar anotação</h1>
+<form action="/update/{{ card.id }}" method="POST" class="edit-form">
 
-        <form action="/update/{{ card.id }}" method="POST" class="edit-form">
+<input
+type="text"
+name="title"
+value="{{ card.title }}"
+placeholder="Título"
+required
+>
 
-            <input 
-                type="text" 
-                name="title" 
-                value="{{ card.title }}" 
-                placeholder="Título"
-                required>
+<input
+type="text"
+name="subtitle"
+value="{{ card.subtitle }}"
+placeholder="Subtítulo"
+required
+>
 
-            <input 
-                type="text" 
-                name="subtitle" 
-                value="{{ card.subtitle }}" 
-                placeholder="Subtítulo"
-                required>
+<textarea
+name="text"
+placeholder="Escreva sua anotação..."
+required
+>{{ card.text }}</textarea>
 
-            <textarea 
-                name="text" 
-                placeholder="Escreva sua anotação..."
-                required>{{ card.text }}</textarea>
+<button type="submit">Salvar alterações</button>
 
-            <button type="submit">Salvar alterações</button>
-
-        </form>
-
-    </div>
+</form>
 
 </div>
+
+</div>
+
+</main>
 
 </body>
 </html>
