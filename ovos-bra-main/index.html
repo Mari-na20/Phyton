@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Egg Timer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="window">
+
+<div class="title-bar">
+<span>🥚 Egg Timer</span>
+</div>
+
+<div class="window-body">
+
+<div id="startScreen">
+<h2>🥚</h2>
+<p>Let's time your egg!</p>
+<button onclick="showOptions()">Start</button>
+</div>
+
+<div id="optionsScreen" class="hidden">
+<p>Choose your egg</p>
+
+<button onclick="startTimer(180)">Soft</button>
+<button onclick="startTimer(300)">Medium</button>
+<button onclick="startTimer(420)">Hard</button>
+
+</div>
+
+<div id="timerScreen" class="hidden">
+<h1 id="time">03:00</h1>
+<p>🥚 Cooking...</p>
+</div>
+
+<div id="doneScreen" class="hidden">
+<h2>🍳</h2>
+<p>Your egg is done!</p>
+<button onclick="restart()">Restart</button>
+</div>
+
+</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
